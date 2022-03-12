@@ -1,0 +1,85 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway|Varela + Round|Coda);
+
+.bg {
+  /* background: black; */
+  padding: 6.23em;
+  flex-direction: row;
+}
+
+.title {
+  color: black;
+  font-family: "Coda", sans-serif;
+  text-align: center;
+  font-size: 1.7em;
+}
+.user-profile {
+  margin: auto;
+  width: 27em;
+  height: 11em;
+  background: rgb(235, 238, 37);
+  border-radius: 1em 1em 0 0;
+}
+
+#full-name {
+  margin: auto;
+  margin-top: -4.4em;
+  margin-left: 5.8em;
+  color: white;
+  font-size: 1.53em;
+  font-family: "Coda", sans-serif;
+  font-weight: bold;
+}
+
+#username {
+  margin: auto;
+  display: inline-block;
+  margin-left: 10.43em;
+  color: #3498db;
+  font-size: 0.87em;
+  font-family: "varela round", sans-serif;
+}
+
+.description {
+  margin: auto;
+  margin-top: 1.35em;
+  margin-right: 3em;
+  width: 18em;
+  color: #72a6aa;
+  font-size: 0.87em;
+  font-family: "varela round", sans-serif;
+}
+
+#avatar {
+  padding: 0.7em;
+  margin-left: 0.3em;
+  margin-top: 0.3em;
+  height: 6.23em;
+  width: 6.23em;
+  border-radius: 50%;
+}
+
+.footer {
+  margin: 2em auto;
+  height: 3.7em;
+  background: #3498db;
+  text-align: center;
+  border-radius: 0 0 1em 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+button {
+  color: white;
+  font-family: "Coda", sans-serif;
+  text-align: center;
+  font-size: 20px;
+  background: none;
+  outline: none;
+  border: 0;
+}
+
+.footer:hover {
+  background: #45a9ec;
+}

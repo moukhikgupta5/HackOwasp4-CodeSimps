@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/sDash.css"/>
+    <title>sDashBoard</title>
+</head>
+<body>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <h1 class="mt-4">Dashboard</h1>
+    <p class="lead mb-3">Welcome <%= name %>  </p>
+    <div id="requests">
+        <% if (requests.length > 0) { %> <% var i = 0; %> <%
+            requests.forEach(request => { %>
+                <h1 class="title">Room Number: <%= request.roomno %> </h1>
+
+                <div class="bg">
+
+                    <div class="user-profile">
+                        <div id="full-name"><%= request.name %> </div>
+                        <div id="username">
+                            <%= request.rno %> 
+                        </div>
+                        <div class="description">
+                            <div>Email: <span id="email"><%= request.email %> </span></div>
+                            <div>Phone Number: <span id="city"><%= request.phno %> </span></div>
+                        </div>
+
+                        <div class="footer">
+                        <button class="done-<%- request._id %>" id="btn">Mark as DONE!!</button>
+                        </div>
+                        <script>
+                            $(document).ready(function () {
+                                var p = "<%- request._id %>";
+                              $('button.done-'+p).on({
+                                click: function () {
+                                  console.log("clicked");
+                                  console.log(p);
+                                  $.post(`/s/update/${p}`);
+                                  setTimeout(function () {
+                                    // alert('Reloading Page');
+                                    location.reload(true);
+                                  }, 1000);
+                                },
+                              });
+                            });
+                          </script>
+                    </div>
+                </div>
+        <% }) %> <% } else {%>
+            <p>There are no Products to display....</p>
+            <% } %>
+    </div>
+</body>
+</html>
+

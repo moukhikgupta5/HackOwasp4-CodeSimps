@@ -1,0 +1,23 @@
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<h1 class="mt-4">Dashboard</h1>
+<p class="lead mb-3">Welcome <%= name %>  </p>
+<a href="/users/logout" class="btn btn-secondary">Logout</a>
+<% if(rqu){ %>
+    <p>Your request is sent</p>
+<% }else{ %> 
+    <a href="" class="btn btn-secondary request">Request</a>
+<% } %> 
+<script type="text/javascript">
+    $(document).ready(function (){
+        $('a.request').click(function(event){
+            event.preventDefault();
+            console.log('hello');
+            $.post(`/users/request`);
+            setTimeout(function () {
+                // alert('Reloading Page');
+                location.reload(true);
+              }, 1000);
+          });
+    })
+</script>
+
